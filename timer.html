@@ -2,24 +2,18 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Genially Delay</title>
+  <title>Genially Auto Delay</title>
   <style>
     body { margin: 0; background: transparent; }
   </style>
 </head>
 <body>
 <script>
-  // Start per Nachricht aus Genially
-  window.addEventListener("message", (e) => {
-    if (e.data === "startSequence") {
-      // Standard-Verzögerung
-      const delay = 3000;
-      setTimeout(() => {
-        window.parent.postMessage({ action: "nextPageGenially" }, "*");
-      }, delay);
-    }
-  });
+  // Starte automatisch nach Laden
+  const delay = 3000; // 3000 ms = 3 Sekunden
+  setTimeout(() => {
+    window.parent.postMessage({ action: "nextPageGenially" }, "*");
+  }, delay);
 </script>
 </body>
 </html>
-
