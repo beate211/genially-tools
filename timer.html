@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Genially Delay</title>
+  <style>
+    body { margin: 0; background: transparent; }
+  </style>
+</head>
+<body>
+<script>
+  // Start per Nachricht aus Genially
+  window.addEventListener("message", (e) => {
+    if (e.data === "startSequence") {
+      // Standard-Verzögerung
+      const delay = 3000;
+      setTimeout(() => {
+        window.parent.postMessage({ action: "nextPageGenially" }, "*");
+      }, delay);
+    }
+  });
+</script>
+</body>
+</html>
+
